@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.example.micha.searchgit.MainActivity">
 
     <EditText
@@ -12,16 +11,31 @@
         android:layout_height="wrap_content"
         android:id="@+id/username"
         android:hint="Enter Username" />
-    <ImageView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/name"
+        app:layout_constraintTop_toBottomOf="@id/username"
+        android:textSize="30sp"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_margin="30dp"
+        android:layout_height="wrap_content"
         android:id="@+id/portrait"
-        android:scaleType="centerCrop"/>
+        app:layout_constraintTop_toBottomOf="@id/name"
+        android:onClick="getRepos"
+        android:scaleType="centerInside"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        android:id="@+id/bio"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/findUser"
         android:text="Find User"
-        android:onClick="findUser"/>
+        android:onClick="findUser"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
